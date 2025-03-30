@@ -1,8 +1,8 @@
 {
   "required_api_version": "2",
-  "name": "DuckAI Chatbot",
-  "description": "Uses DuckDuckGo to provide free GPT-4o-mini.\n!!! pip install duckduckgo-search IS REQUIRED",
-  "developer_name": "Alexander Tarasov",
+  "name": "Gemini AI Chatbot",
+  "description": "Uses Google Gemini API to provide AI responses.\n!!! pip install requests IS REQUIRED",
+  "developer_name": "Piyush",
   "icon": "images/icon.png",
   "options": {
     "query_debounce": 1
@@ -13,28 +13,42 @@
       "type": "keyword",
       "name": "Keyword",
       "description": "Keyword to ask AI",
-      "default_value": "ddg"
+      "default_value": "gem"
+    },
+    {
+      "id": "api_key",
+      "type": "text",
+      "name": "Gemini API Key",
+      "description": "Your Google Gemini API key",
+      "default_value": ""
     },
     {
       "id": "model",
       "type": "select",
       "name": "AI Model",
-      "description": "Select AI model to use",
-      "default_value": "gpt-4o-mini",
-      "options": ["gpt-4o-mini", "claude-3-haiku", "llama-3.1-70b", "mixtral-8x7b"]
+      "description": "Select Gemini model to use",
+      "default_value": "gemini-2.0-flash",
+      "options": [
+        "gemini-pro",
+        "gemini-pro-vision",
+        "gemini-1.5-pro",
+        "gemini-1.5-flash",
+        "gemini-2.0-flash",
+        "gemini-2.5-experimental"
+      ]
     },
     {
       "id": "default_prompt",
       "type": "text",
       "name": "Default Prompt",
-      "descriptions": "Text that will be appended to every query you make",
+      "description": "Text that will be appended to every query you make",
       "default_value": ""
     },
     {
       "id": "wrap_length",
       "type": "input",
       "name": "Line Length",
-      "descriptions": "The maximum number of characters per line",
+      "description": "The maximum number of characters per line",
       "default_value": "64"
     }
   ]
